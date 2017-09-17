@@ -63,22 +63,22 @@ export class UserAuth {
     }
     static storeallusers(req, res) {
         console.log(req.body)
-        // let newPatientData = {
-        //     patientName:req.body.patientName,
-        //     patientAge:req.body.patientAge,
-        //     gender:req.body.gender,
-        //     disease:req.body.disease,
-        //     date:req.body.disease
-        // }
-        // newPatientData.save((err,data)=>{
+        let newPatientData = {
+            patientName:req.body.patientName,
+            patientAge:req.body.patientAge,
+            gender:req.body.gender,
+            disease:req.body.disease,
+            date:req.body.disease
+        }
+        newPatientData.save((err,data)=>{
 
-        //     if(err){
-        //         res.send(err)
-        //     }
-        //     else{
-        //         res.send(data)
-        //     }
-        // })
+            if(err){
+                res.send(err)
+            }
+            else{
+                res.send(data)
+            }
+        })
     }
 
     static getAllPatient(req, res) {
