@@ -73,7 +73,7 @@ export class UserAuth {
         newPatientData.save((err,data)=>{
 
             if(err){
-                res.send(err)
+                res.send("eror incode")
             }
             else{
                 res.send(data)
