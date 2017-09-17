@@ -14,7 +14,7 @@ router.get('/',(req,res)=>{
 
 // router.post('/login',UserAuth.login);
 
-router.get('/patient',UserAuth.storeallusers);
+router.post('/patient',UserAuth.storeallusers);
 
 router.get('/allPatient',UserAuth.getAllPatient);
 
