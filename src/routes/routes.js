@@ -12,7 +12,7 @@ router.get('/',(req,res)=>{
 
 // router.post('/login',UserAuth.login);
 
-router.post('/patient/:doctor',UserAuth.storeUserForLoginPerson);
+router.post('/patient',UserAuth.storeallusers);
 
 router.get('/allPatient',UserAuth.getAllPatient);
 

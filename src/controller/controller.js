@@ -61,6 +61,24 @@ export class UserAuth {
             }
         })
     }
+    static storeallusers(req, res) {
+        let newPatientData = {
+            patientName,
+            patientAge,
+            gender,
+            disease,
+            date
+        }
+        newPatientData.save((err,data)=>{
+
+            if(err){
+                res.send(err)
+            }
+            else{
+                res.send(data)
+            }
+        })
+    }
 
     static getAllPatient(req, res) {
         UserModel.find({}, (err, users) => {
