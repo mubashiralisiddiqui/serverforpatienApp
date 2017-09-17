@@ -14,7 +14,7 @@ app.use(cookieParser());
 app.use(session({secret:"fd34s@!@dfa453f3DF#$D&W",resave:false,saveUninitialized:true}))
 app.use('/api',router)
 
-mongoose.connect('mongodb://mubashirali:mlab123>@ds139844.mlab.com:39844/patientmanagement')
+mongoose.connect('mongodb://mubashirali:heroku123@ds139844.mlab.com:39844/patientmanagement')
 app.listen(port,() => {
     console.log(port)
 })
