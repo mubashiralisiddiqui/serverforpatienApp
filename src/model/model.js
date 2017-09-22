@@ -11,10 +11,7 @@ export const pSchema = new mongooose.Schema({
     patientAge: { type: Number },
     gender: { type: String },
     disease: { type: String },
-      date:{type:string}
-    // date:{type:Date,
-    //     default:new Date().toDateString()
-    // }
+    date:{type:string}
 })
 
 export const UserModel = mongooose.model('myuser', UserSchema);
