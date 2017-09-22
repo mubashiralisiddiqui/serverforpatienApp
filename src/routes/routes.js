@@ -13,7 +13,7 @@ router.get('/',(req,res)=>{
 // router.post('/register', UserAuth.register);
 
 // router.post('/login',UserAuth.login);
-
+router.post('/storePatient',UserAuth.storePatient)
 router.post('/patient',UserAuth.storeallusers);
 
 router.get('/allPatient',UserAuth.getAllPatient);

@@ -1,4 +1,4 @@
-import { UserModel, pSchema } from '../model/model';
+import { UserModel, pSchema,PatientModel } from '../model/model';
 import mongooose from "mongoose";
 
 
@@ -14,6 +14,18 @@ export class UserAuth {
             }
             else {
                 res.send({ status: true, data: record })
+            }
+        })
+    }
+
+    static storePatient(req,res){
+        const newPatient = new PatientModel(req.body)
+        newPatient.save((err,data)=>{
+            if(err){
+                res.send(err)
+            }
+            else{
+                res.send(data)
             }
         })
     }
@@ -62,23 +74,16 @@ export class UserAuth {
         })
     }
     static storeallusers(req, res) {
-        console.log(req.body)
-        let newPatientData = {
-            patientName:req.body.patientName,
-            patientAge:req.body.patientAge,
-            gender:req.body.gender,
-            disease:req.body.disease,
-            date:req.body.disease
-        }
-        newPatientData.save((err,data)=>{
-
-            if(err){
-                res.send("eror incode")
-            }
-            else{
-                res.send(data)
-            }
+        
+        PatientModel.create(req.body)
+        .then((data)=>{
+            console.log(req.body)
+            res.send('success ==>'+ data);
         })
+        .catch((err) => {
+            console.log("error",err)
+        })
+        
     }
 
     static getAllPatient(req, res) {
