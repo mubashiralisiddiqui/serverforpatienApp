@@ -34,21 +34,21 @@ export class UserAuth {
         let user_id = req.body.user_id;
         let userPassword = req.body.password;
 
-        UserModel.findOne({ user_id: user_id, password: userPassword }, (err, user) => {
-            if (err) {
-                throw err;
-                return res.status(500).send({ status: false });
-            }
+        // UserModel.findOne({ user_id: user_id, password: userPassword }, (err, user) => {
+        //     if (err) {
+        //         throw err;
+        //         return res.status(500).send({ status: false });
+        //     }
 
-            if (!user) {
-                return res.status(404).send({ status: false });
-            }
-            else {
-                req.session.user = user;
-                return res.status(200).send({ status: true, data: user })
-            }
+        //     if (!user) {
+        //         return res.status(404).send({ status: false });
+        //     }
+        //     else {
+        //         req.session.user = user;
+        //         return res.status(200).send({ status: true, data: user })
+        //     }
 
-        })
+        // })
     }
 
     static storeUserForLoginPerson(req, res) {
@@ -87,7 +87,7 @@ export class UserAuth {
     }
 
     static getAllPatient(req, res) {
-        UserModel.find({}, (err, users) => {
+        PatientModel.find({}, (err, users) => {
             if (err) throw err;
             res.send({ status: true, data: users })
         })
